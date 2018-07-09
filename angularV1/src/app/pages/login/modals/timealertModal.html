@@ -1,0 +1,27 @@
+<br>
+<div class="modal-content">
+	<div ng-repeat="assess in resultData">
+		<div class="modal-header">
+			<button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+				<em class="ion-ios-close-empty sn-link-close"></em>
+			</button>
+			<center> <h4 class="modal-title" >Time period for {{assess.assessmentName}} has been finished!<h4></center>
+		</div>
+		<div class="modal-body">
+			<div class="col-md-12">
+				<div class="col-md-6"><h5>Passing Marks: {{assess.passingMarks}}</h5></div>
+				<div class="col-md-6"><h5>Total Marks: {{assess.totalMarks}}</h5></div>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-6"><h5>Obtained Marks: {{assess.obtainedMarks}}</h5></div>
+				<div class="col-md-6"><h5>Status: {{assess.status}}</h5></div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="/#/dashboard/result">
+				<button type="button" class="btn btn-danger btn-sm" ng-click="$dismiss()">OK</button>
+			</a>
+		</div>
+	</div>
+</div>
+

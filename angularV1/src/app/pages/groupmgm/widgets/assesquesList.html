@@ -1,0 +1,83 @@
+<div class="horizontal-scroll">
+  <div class="form-group select-page-size-wrap ">
+  
+   <!-- <a ng-href="/#/dashboard/assesments/quescreate"> 
+    <button type="button" class="btn btn-primary" style="">
+      Add Question
+    </button>
+  </a>  -->
+</div>
+<table class="table table-bordered table-hover table-condensed" st-table="">
+ <thead>
+  <tr class="sortable" style="background-color: #209E91;">
+   <td class="table-id" st-sort="questionId" st-sort-default="true">Sr No</td>
+   <td st-sort="passingMarks">Question Description</td>
+   <td st-sort="Type"> Category</td>
+   <td st-sort="reattempt">Correct Answers</td>
+   <td st-sort="timePeriod">Marks</td>
+   <td st-sort="createdDate">Created Date</td>
+   <td >Action</td>
+ </tr>
+</thead>
+<tbody>
+  <tr ng-repeat="que in fetchquestions" class="editable-row" >
+
+   <td class="table-id">
+    <span>
+      {{$index + 1}} 
+    </span>
+  </td>
+  
+  <td>
+    <span>
+      {{ que.questionText  }}
+    </span>
+  </td>
+  <td>
+    <span>
+      {{ que.category}}    
+    </span>
+  </td>
+  <td>
+    <span>
+     {{ que.Correctans }}
+   </span>
+ </td>
+ <td>
+  <span>
+   {{ que.marks  }}
+ </span>
+</td>
+
+<td>
+  <span>
+    {{ que.createdDate | date:'MM/dd/yyyy'  }}
+  </span>
+</td>
+<td>
+  <div class="buttons" ng-show="!rowform.$visible">
+   <a ng-href="/#/dashboard/assesquesupdate"><button class="btn btn-warning editable-table-button btn-xs" ng-click="editques(que.questionId)">Edit </button></a>
+   <script>
+     function removeQue() {
+      var txt;
+      if (confirm("Press a button!") == true) {
+       txt = "You pressed OK!";
+     } else {
+       txt = "You pressed Cancel!";
+     }
+     document.getElementById("$index").innerHTML = txt;
+   }
+ </script>
+ <button class="btn btn-danger editable-table-button btn-xs" ng-click="deleteQue(que.questionId)" data-confirm="Are you sure to delete this item?">Delete</button>
+</div>
+</td>
+</tr>
+</tbody>
+<tfoot>
+  <tr>
+   <td colspan="16" class="text-center">
+    <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+  </td>
+</tr>
+</tfoot>
+</table>

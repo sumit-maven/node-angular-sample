@@ -1,0 +1,81 @@
+<form method="post" enctype="multipart/form-data" ref='uploadForm' id='uploadForm' >
+  <div class="form-group">
+   <div class="col-md-12">
+     <div class="col-md-12">
+      <label></label>
+      <textarea placeholder="Question description" class="form-control" ng-model="ques.Qdescription"></textarea>
+    </div>
+    <div class="col-md-4" style="margin-top:2%">
+     <select class="form-control" ng-model="ques.Qtype">
+       <option value="" selected="" disabled="" style="display:none">Select Question Type</option>
+       <option value="Single Answered" selected="">Single Answered</option>
+       <option value="Multiple Choice">Multiple Choice</option>
+       <option value="Descriptive">Descriptive</option>
+     </select>
+   </div>
+   <div class="col-md-4" style="margin-top:2%">
+    <input type="number" placeholder="Marks" class="form-control" ng-model="ques.marks"/>
+  </div>
+  <div class="col-md-4" style="margin-top:2%">
+    <select class="form-control" ng-model="ques.category"> 
+     <option value="" selected="" disabled="">Select Category</option>
+     <option value="Technical" style="background-color: rgba(0, 0, 0, 0.34);">Technical</option>
+     <option value="Non-Technical" style="background-color: rgba(0, 0, 0, 0.34);">Non-Technical</option>
+   </select>
+ </div>
+
+ <div class="col-md-12" id="Single Quesed" style="margin-top:3%;">
+  <div class="col-md-6" style="margin-left: -38px;padding: 0px" ng-if="ques.Qtype=='Single Answered'">
+   <ul style="list-style-type:none">                        
+    <span style="margin-top:2%">Click on radio button for correct answer!</span>
+    <div class="row">
+     <div ng-repeat="item in list" class="col-md-6 ">
+      <li style="padding:2%;display: flex;">
+        
+        <input type="text" class="form-control" Placeholder="{{item.value}}" ng-model="ques.options[item.id]" required/>
+        <div class="has-success">
+          <label class="radio-inline custom-radio nowrap" style="margin-top: 8px;margin-left: 8px;">
+            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="{{ques.options[item.id]}}" ng-model="ques.correctAns['ca']" required>
+            <span></span>
+          </label>
+        </div>
+      </li>
+    </div>
+  </div>
+</ul>
+</div>
+
+<div class="col-md-6" style="margin-left: -38px;padding: 0px" ng-if="ques.Qtype=='Multiple Choice'">
+ <ul style="list-style-type:none">                        
+  <span style="margin-top:2%">Check the boxes for the correct answers! {{randomId}}</span>
+  <div class="row">
+   <div ng-repeat="item in list" class="col-md-6 ">
+    <li style="padding:2%;display: flex;">
+      <input type="text" class="form-control" Placeholder="{{item.value}}" ng-model="ques.options[item.id]" required/>
+      <div class="has-success">
+        <label class="checkbox-inline custom-checkbox nowrap" style="margin-top: 8px;margin-left: 8px;">
+          <input type="checkbox" name="inlineRadioOptions" id="inlineRadio1" value="{{ques.options[item.id]}}" ng-model="ques.correctAns[item.randomNo]" required>
+          <span></span>
+        </label>
+      </div>
+    </li>
+  </div>
+</div>
+</ul>
+</div>
+
+<div class="col-md-6" style="margin-left: -38px;padding: 0px" ng-if="ques.Qtype=='Descriptive'">
+  <input type="text" class="form-control" Placeholder="Write the correct answer here!" ng-model="ques.options" required/>
+</div>
+<div class="col-md-6">
+  <input  class="btn btn-primary btn-raised" style="background-color:#209E91;width: 225px;padding-left: 3%;" type = "file" file-model = "quesImg"/><!-- {{quesImg}} -->
+</div>
+</div> 
+</div>
+<div class="col-md-12" align="center"  style="margin-top: 2%;">
+  <a href="/#/dashboard/questions/questionslist"><button type="button" class="btn btn-primary btn-raised" style="float: initial;" >Back</button></a>
+  <button type="button" ng-click = "addQuestion(ques)" class="btn btn-primary btn-raised">Add</button>
+  <button class="btn btn-primary btn-large center" type="reset" ng-click="reset()">Reset</button>
+</div>
+</div>
+</form>

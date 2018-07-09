@@ -1,0 +1,24 @@
+<div class="modal-content">
+<div ng-repeat="data in assesmentData">
+  <div class="modal-header">
+    <button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+      <em class="ion-ios-close-empty sn-link-close"></em>
+    </button>
+    <h4 class="modal-title" id="myModalLabel">Modal </h4>
+  </div>
+  
+  <div class="modal-body" ng-repeat="data in assesmentData" >
+   <div class="col-md-4"><h5>Number Of Questions :{{data.assessmentId}}</h5></div>
+      <div class="col-md-4"><h5>Passing Marks: :{{data.passingMarks}}</h5></div>
+      <div class="col-md-4"><h5>Total Marks : {{data.totalMarks}}</h5></div>
+      <div class="col-md-4"><h5>Negative Marking: {{data.negetiveMarks}}</h5></div>
+      <div class="col-md-4"><h5>Re-Attempt Allow:  {{data.reattempt}}</h5></div>
+      <div class="col-md-4"><h5>Total Time :{{data.timePeriod}}</h5> </div>
+      <div class="col-md-4"><h5>Section Name:{{data.assessmentName}} </h5></div>
+  </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="$dismiss()">Save changes</button>
+  </div>
+  </div>
+</div>

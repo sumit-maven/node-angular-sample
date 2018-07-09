@@ -1,0 +1,148 @@
+<div class="horizontal-scroll">
+  <div class="form-group select-page-size-wrap ">
+<!--    <label>
+    <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+    ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+  </select>
+</label> -->
+
+<a ng-href="/#/dashboard/groupmgm/tagcreate"> 
+ <button type="button" class="btn btn-primary" ng-disabled="adminRoles=='users' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'"  >
+  Add Tag
+</button>
+</a>
+</div>
+<form >
+  <input type="text"  placeholder="Search Tag" ng-model="groupName">
+
+  <button class="btn btn-primary editable-table-button btn-xs" style="width: 76px; height: 43px;" ng-click="searchGroup(groupName)">Go!</button>
+  <button   class="btn btn-primary" ng-click="exportData(fetchgroupData)" style="border-top-width: 8px;border-bottom-width: 5px; border-right-width: 3px;margin-left: 32%;
+  margin-bottom: 1%;" ng-disabled="adminRoles=='users' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'"> Export </button>
+  <table class="table table-bordered table-hover table-condensed" st-table="fetchgroupData">
+    <thead>
+      <tr class="" style="background-color: #209E91;" ng-class="selectedCls('id')" ng-click="changeSorting('id')">
+
+        <!-- <td class="table-id" st-sort="questionId" st-sort-default="true">Sr No</td> -->
+        <th>Tags Name
+          <i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+          <i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+
+        </th>
+        <th> Type/Tech
+         <i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+         <i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+       </th>
+       <th>Description
+         <i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+         <i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+       </th>
+      <!--  <th> No of Users
+         <i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+         <i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+       </th>
+       <th> No of Ques
+         <i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+         <i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+       </th>
+       <th> SME Type
+         <i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+         <i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+       </th> -->
+       <th>Action
+         <i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+         <i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+       </th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr ng-repeat="user in fetchgroupData | firstPage:currentPage*pageSize | limitTo:pageSize | orderBy:sort.column:sort.descending" class="editable-row" >
+      <td>   <span> {{ user.groupName}}  </span></td>
+      <td>
+       <span>
+        {{ user.technology  }}
+      </span>
+    </td>
+    <td >
+     <span ng-repeat="tag in user.tags">
+      {{tag}}</br>
+    </span>
+  </td>
+
+  <!-- <td>
+    <span>
+      {{ user.noOfMember}} 
+    </span>
+  </td>
+  <td>
+   <span>
+     {{ user.noOfQues}} 
+   </span>
+ </td>
+ <td>
+  <span>
+    {{ user.SMEs}} 
+  </span> -->
+</td>
+
+<td>
+ <div class="buttons" >
+  <a ng-href="/#/dashboard/groupmgm/tagdetails">
+   <button class="btn btn-primary editable-table-button btn-xs"  ng-click="groupDetail(user.groupId)" ng-disabled="adminRoles=='users' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'">Edit</button>
+ </a>
+ <!-- <a ng-href="/#/dashboard/groupmgm/quesview">
+  <button class="btn btn-warning  btn-xs" ng-click="getGroupByid(user.groupId)">View Questions</button>
+</a>
+ -->
+<button class="btn btn-danger editable-table-button btn-xs" ng-click="deleteUser(user.userId)" data-confirm="Are you sure to delete this item?" ng-disabled="adminRoles=='users' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'">Delete</button>
+</div>
+</td>
+</tr>
+</tbody>
+<tfoot >
+ <tr>
+   <td colspan="16" class="text-center">
+    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" style="" class="pagination"><</button>
+    <span>{{currentPage+1}}/{{numberOfPages()}}</span>
+    <button ng-disabled="currentPage >= fetchgroupData.length/pageSize - 1" ng-click="currentPage=currentPage+1" class="pagination">></button>
+  </td>    
+ <!--  <td colspan="16" class="text-center">
+   <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+ </td> -->
+</tr>
+</tfoot>
+</table>
+</form>
+
+<style>
+  input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+  .pagination{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    color: #FFF;
+    background: #209e91;
+    cursor: pointer;
+
+  }
+
+/*  .pagination span{
+    display: inline-block;
+    margin: 0 0 10px 0;
+    vertical-align: middle;
+  }*/
+  button:disabled {
+    background:#2e655f;
+    cursor: default;
+  }
+
+</style>

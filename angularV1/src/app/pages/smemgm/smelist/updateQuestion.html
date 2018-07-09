@@ -1,0 +1,46 @@
+<div class="horizontal-scroll">
+   <form  ng-submit="updateQuestions(answer)">
+      <div class="col-md-12">
+         <div class="form-group">
+            <div class="col-md-12">
+               <div class="col-md-6">
+                  <select class="form-control" ng-model="answer.type">
+                     <option value="Single Answered">Single Answered</option>
+                  </select>
+                  <div class="col-md-12" id="Single Answered">
+                     <table>
+                        <tr ng-repeat="val in qData">
+                           <span>Click on correct answer {{val.questionType}}</span>
+                           <td style="padding:2%">
+                              <input type="text" class="form-control" Placeholder="{{val.Options}}" ng-model="answer.options[item.id]"/>
+                           </td>
+                           <td>
+                              <div class="has-success">
+                                 <label class="radio-inline custom-radio nowrap">{{answer.options.Correctans}}
+                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="{{answer.options[item.id]}}" ng-model="answer.correctAns['ca']">
+                                    <span></span>
+                                 </label>
+                              </div>
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+               </div>
+               <div >
+                  <div class="col-md-6">{{val.marks}}
+                     <input type="number" placeholder="Marks" class="form-control" ng-model="answer.marks" value="{{val.marks}}"/>
+                  </div>
+               </div>
+               <div class="col-md-12">
+                  <label></label>
+                  <textarea placeholder="Question description" class="form-control" ng-model="answer.Qdescription">{{val.questionText}}</textarea>
+               </div>
+            </div>
+
+         </div>
+         <div class="col-md-12">
+            <button type="submit" class="btn btn-danger">Update</button>
+         </div>
+      </div>
+   </form>
+</div>

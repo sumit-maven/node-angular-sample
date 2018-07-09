@@ -1,0 +1,125 @@
+<h2 class="ng-scope" style="margin-bottom: 30px; margin-top: -8px; color:#fff">User Details</h2>
+<div class="widgets" ba-panel>
+   <form class="form-horizontal" role="form" method="post" name="registration">
+      <div class="col-md-12" ng-repeat="user in qData" ><!-- ng-repeat="user in empData" -->
+         <div class="row">
+
+            <div class="col-sm-6">
+               <label for="input01" class="col-sm-4 control-label">User Name<span style="color:red; margin-left: 5%;"></span></label>
+               <div class="col-sm-8">
+                  <input type="text"  class="form-control" id="userName"  placeholder="User Name" ng-model="user.userName" readonly  style="color:rgba(0, 0, 0, 0.4) font-color:#fff" />
+               </div>
+            </div>
+            <div class="col-sm-6">
+               <label for="select" class="col-sm-4 control-label">Email<span style="color:red; margin-left: 5%;"></span></label>
+               <div class="col-sm-8">
+                  <input type="email" placeholder="Email" class="form-control" ng-model="user.email "   name="email"/>
+               </div>
+            </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-sm-6" class="form-group" ng-class="{'has-error': registration.phone.$error.number}">
+               <label for="input01" class="col-sm-4 control-label" >Mobile No<span style="color:red; margin-left: 5%;"></span></label>
+               <div class="col-sm-8" > 
+                  <input type="text"  value="" ng-model="user.mobileNo"  placeholder="Mobile No" class="form-control" ng-minlength="10" ng-maxlength="10"  pattern="[0-9]{10}" title="Enter your mobile number"  >
+               </div>
+            </div>
+            <div class="col-sm-6">
+               <label for="userType" class="col-sm-4 control-label"> User Type</label>
+               <div class="col-sm-8" >
+                  <input type="text" placeholder="User Type" class="form-control"  ng-model="user.userType" name="userType"  />
+
+               </div>
+            </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-sm-6">
+               <label for="address" class="col-sm-4 control-label">Education</label>
+               <div class="col-sm-8" >
+                  <input type="text" placeholder="Education" class="form-control"  ng-model="user.education" name="education"  />
+                  </div>
+            </div>
+            <div class="col-sm-6">
+               <label for="topicInterest" class="col-sm-4 control-label">Topic Interest <span style="color:red; margin-left: 5%;"></span></label>
+               <div class="col-sm-8" >
+            <input type="text" placeholder="Interest" class="form-control"  ng-model="user.topicInterest" name="topicInterest"  />
+            </div>
+            </div>
+            </div>
+            <br>
+             <div class="row">
+           <div class="col-sm-6">
+               <label for="address" class="col-sm-4 control-label">Work</label>
+               <div class="col-sm-8" >
+                  <input type="text" placeholder="Work" class="form-control"  ng-model="user.work" name="work"  />
+                  </div>
+            </div>
+            <div class="col-sm-6">
+               <label for="interest" class="col-sm-4 control-label">Certification <span style="color:red; margin-left: 5%;"></span></label>
+               <div class="col-sm-8" >
+            <input type="text" placeholder="Certification" class="form-control"  ng-model="user.certification" name="Certification"  />
+            </div>
+            </div>
+            </div>
+            <br>
+         <div class="row">
+           <div class="col-sm-6">
+               <label for="address" class="col-sm-4 control-label">Address</label>
+               <div class="col-sm-8" >
+                  <input type="text" placeholder="User Level" class="form-control"  ng-model="user.address" name="address"  />
+
+               </div>
+            </div>
+            <div class="col-sm-6">
+               <label for="empStatus" class="col-sm-4 control-label">Status <span style="color:red; margin-left: 5%;"></span></label>
+            <div class="col-sm-8" >
+               <select ng-model="user.userStatus" class="form-control" >
+                  <option value="Enabled">Enabled</option>
+                  <option value="Disabled">Disabled</option>
+               </select>
+            </div>
+            </div>
+            </div>
+         
+         <br>
+
+      <br>
+      <div style="margin-left: 32%;font-size: 20px;"> <span>{{msg}}</span> </div>
+      <div class="modal-buttons clearfix">
+         <div class="button-wrapper">
+            <a ng-href="#/dashboard/usermgm/userlist" style="color: #fff;">
+               <button type="button" class="btn btn-primary btn-raised" style="float: initial;">Back</button>  
+            </a> 
+             <button type="button" class="btn btn-primary btn-raised" ng-click="updateUser(user.userId, user)" style="float: initial;">Update</button> <!-- ng-click="updateEmp(user)" -->
+         </div>
+      </div>
+      </div>
+   
+</form>
+</div>
+<style type="text/css">
+.al-breadcrumb {
+   background: none;
+   color: #ffffff;
+   padding: 0;
+   margin: 0;
+   float: right;
+   padding-top: 11px;
+   display: none;
+
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #dddddd;
+  border-color: #e2e2e2;
+}
+.form-control {
+    color: #ffffff;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+}
+</style>

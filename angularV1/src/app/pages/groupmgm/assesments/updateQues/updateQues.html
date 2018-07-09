@@ -1,0 +1,63 @@
+<div class="horizontal-scroll" ba-panel>
+ <form>
+  <div class="col-md-12">
+   <div class="form-group">
+    <div class="col-md-12"  ><!-- ng-repeat="value in qData" -->
+     <div class="col-md-12">
+      <label></label>
+      <textarea placeholder="Question description" class="form-control" ng-model="value.questionText"></textarea>
+    </div>
+    <div class="col-md-6" style="margin-top:2%">
+      <select class="form-control" ng-model="value.questionType">
+       <option value="" selected="" disabled="" style="display:none">Select</option>
+       <option value="Single Answered" style="background-color: rgba(0, 0, 0, 0.34);">Single Answered</option>
+     </select>
+   </div>
+   <div class="col-md-6" style="margin-top:2%">
+    <input type="number" placeholder="Marks" class="form-control" ng-model="value.marks" />
+  </div>
+  <div class="col-md-12" id="Single Answered" style="margin-top:3%;">
+    <div class="col-md-6" style="margin-left: -38px;padding: 0px">
+     <!--   <UL style="list-style-type:none"> -->
+     <span style="margin-top:2%">Click on correct answer</span>
+
+
+     <div class="row">
+      <!-- {{value.answers.Options}}{{value.answers.Correctans}} -->   
+      <div ng-repeat= 'val in value.answers' class="col-md-6"> 
+       {{val.Correctans}}
+       <li style="display: flex;padding: 2%"  ng-repeat= 'opt in val.Options'>
+        {{opt.id}}
+        <input type="text" class="form-control" placeholder="option"  value="{{opt.description}}" ng-model="opt.description"/>        
+        <div class="has-success">
+          <label class="radio-inline custom-radio nowrap" style="margin-top: 8px;margin-left: 8px;"> 
+            <input type="radio"   name="RadioOptions" ng-value="{{val.Correctans[ca]}}" ng-model="val.Correctans[ca]"  
+            ng-if="opt.id==val.Correctans" ng-checked="getCheckedTrue()">
+            <span></span>
+          </label>
+        </div>
+
+     <!--    <div class="has-success" ng-if="opt.id!=val.Correctans">
+          <label class="custom-radio nowrap" style="margin-top: 8px;margin-left: 8px;"> 
+            hi            <input type="radio" name="RadioOptions" id="eRadio2" ng-model="val.cAns[ca]">
+            <span></span>
+          </label>
+        </div> -->
+
+      </li>
+    </div>
+  </div>
+</UL>
+</div>
+</div> 
+<div class="col-md-12" style="margin-top: 2%;" align="center">
+  <a href="/#/dashboard/questions/questionslist">
+    <button type="button" class="btn btn-primary btn-raised" style="float: initial;" >Back</button>
+  </a>
+  <button type="submit" class="btn btn-primary btn-raised" ng-click="updateQuestions(value.questionId,value)">Update</button>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>

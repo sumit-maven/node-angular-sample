@@ -1,0 +1,121 @@
+<div class="widgets" ba-panel>
+ <form>
+ <div class="col-md-12" ng-repeat="value in assessData" >
+  <div class="row">
+  <div class="col-sm-6">
+        <label for="select" class="col-sm-4 control-label">Choose Category</label>
+     <div class="col-sm-8">
+      <div class="form-group">
+        <select class="form-control " selectpicker value={{value.categoryName}}>
+          <option value={{value.categoryName}} >Technical</option>
+          <option value={{value.categoryName}} >Non-Technical</option>
+          <option ng-repeat="var in quesCatData" style="background-color: rgba(0, 0, 0, 0.34);" value="{{var.questionsCatagoryId}}">{{ var.categoryName }}
+          </option>
+
+        </select>
+      </div>
+    </div>
+    </div>
+  
+<div class="col-sm-6">
+    <label for="input01" class="col-sm-4 control-label">Assessment Name</label>
+    <div class="col-sm-8">
+      <input type="text" class="form-control" id="input01" placeholder="Assessment Name" ng-model="value.assessmentName" >
+    </div>
+</div>
+  </div>
+  <br>
+  <div class="row">
+  <div class="col-sm-6">
+   <label for="select" class="col-sm-4 control-label">Total Marks</label>
+   <div class="col-sm-8" >
+    <input type="text" placeholder="Total Marks" class="form-control" ng-model="value.totalMarks"  />
+  </div>
+</div>
+<div class="col-sm-6">
+  <label for="input01" class="col-sm-4 control-label">Passing Marks</label>
+  <div class="col-sm-8" >
+    <input type="text" placeholder="Passing Marks" class="form-control"  ng-model="value.passingMarks"  />
+  </div>
+</div>
+</div>
+<br>
+  <div class="row">
+   <!-- <div class="col-sm-6">
+  <label for="input01" class="col-sm-4 control-label">Negative Marking</label>
+  <div class="col-sm-8" >
+    <input type="text" placeholder="Negative Marking" class="form-control" ng-model="value.negativeMarks" />
+  </div>
+</div> -->
+<div class="col-sm-6">
+     <label for="select" class="col-sm-4 control-label">Time Period</label>
+     <div class="col-sm-8">
+      <div class="form-group">
+        <select class="form-control " selectpicker placeholder={{value.timePeriod}}  ng-model="value.timePeriod">
+          <!-- <option ng-repeat="var in quesCatData" value="{{var.questionsCatagoryId}}">{{ var.categoryName }}
+          </option> -->
+          <option value={{value.timePeriod}} >{{value.timePeriod}}</option>
+          <option value="20Minutes" style="background-color: rgba(0, 0, 0, 0.34);">20 Minutes</option>
+          <option value="30Minutes" style="background-color: rgba(0, 0, 0, 0.34);">30 Minutes</option>
+          <option value="45Minutes" style="background-color: rgba(0, 0, 0, 0.34);">45 Minutes</option>
+          <option value="60Minutes" style="background-color: rgba(0, 0, 0, 0.34);">60 Minutes</option>
+
+        </select>
+      </div>
+    </div>
+</div>
+ </div>
+ <br>
+  <div class="row">
+  <!-- <div class="col-sm-6">
+       <label for="inlineRadio" class="col-sm-4 control-label" >Reattempt Allow </label>
+    
+      <div class="col-sm-2">
+        <label class="radio-inline custom-radio nowrap">
+          <input type="radio" name="RadioOptions" id="Radio1" value="yes" ng-model="value.reattempt" >
+          <span>Yes</span>
+        </label>
+      </div>
+      <div class="col-sm-3">
+        <label class="radio-inline custom-radio nowrap">
+          <input type="radio" name="RadioOptions" id="eRadio2" value="no" ng-model="value.reattempt">
+          <span>No</span>
+        </label>
+            </div>
+  </div> -->
+     <div class="col-sm-6">
+      <label for="button" class="col-sm-4 control-label">Chooe Assessment Image </label>
+      <div class="col-sm-8 "> <!-- <a href class="change-userpic" ng-click="uploadPicture()"><button type="button" class="btn btn-default btn-with-icon save-profile " style="margin-top: 0%;">browse</button></a> -->
+              <input type="file" ng-show="true" id="uploadFile" value="value.assessmentImage" ng-model="value.assessmentImage" ng-file-select="onFileSelect($files)"/></div>
+              </div>
+              </div><br>
+        <div class="modal-buttons clearfix">
+          <div class="button-wrapper">
+          <a href="/#/dashboard/assesments/assesmentslist"><button type="button" class="btn btn-primary btn-raised" style="float: initial;" >Back</button></a>
+          <button type="button" class="btn btn-primary btn-raised" ng-click="updateAsessment(value.assessmentId,value)" style="float: initial;">Update</button></div>
+        </div>
+      </form> </div></div>
+     <style type="text/css">
+.al-breadcrumb {
+   background: none;
+   color: #ffffff;
+   padding: 0;
+   margin: 0;
+   float: right;
+   padding-top: 11px;
+   display: none;
+
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #dddddd;
+  border-color: #e2e2e2;
+}
+.form-control {
+    color: #ffffff;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+}
+</style>

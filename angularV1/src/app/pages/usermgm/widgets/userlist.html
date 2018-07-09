@@ -1,0 +1,182 @@
+<div class="horizontal-scroll" ng-init="getuserlist()">
+ <div class="form-group select-page-size-wrap ">
+
+  <label>
+    <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+    ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+  </select>
+</label>
+</div>
+</div>
+<form >
+  <input type="text"  placeholder="Search User" ng-model="userName">
+  <button class="btn btn-primary editable-table-button btn-xs" style="width: 76px;height: 43px;" ng-click="searchUser(userName)">Go!</button>
+  <!-- <i ng-if="superAdmin!='superAdmin' ">-->
+  <button class="btn btn-primary" ng-click="exportData(fetchuserData)" style="border-top-width: 8px;border-bottom-width: 5px; border-right-width: 3px;margin-left: 32%;
+  margin-bottom: 1%;" ng-disabled="adminRoles=='groups' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'">Export</button>
+  <!-- </i> -->
+<!--   <i ng-if="superAdmin=='superAdmin'" >
+    <button class="btn btn-primary" ng-click="exportData(fetchuserData)" style="border-top-width: 8px;border-bottom-width: 5px; border-right-width: 3px;margin-left: 32%;
+    margin-bottom: 1%;"> Export </button>
+  </i> -->
+  <table class="table table-bordered table-hover table-condensed" st-table="fetchuserData">
+   <thead>
+    <tr ng-class="selectedCls('id')" ng-click="changeSorting('id')" style="background-color: #209E91;">
+<!--    <td class="table-id" st-sort="questionId" st-sort-default="true">Sr No</td>
+-->   <th>User Name
+     <i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+          <i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+        </th>
+<th> Email
+  <i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+  <i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+</th>
+<th>Mobile No
+<i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+<i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+</th>
+<th>Type/Tech.
+<i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+<i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+</th>
+<th>Education
+<i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+<i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+</th>
+<th>Location
+<i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+<i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+</th>
+<th>Action
+<i class="glyphicon glyphicon-chevron-down" ng-show="sort.descending"></i>
+<i class="glyphicon glyphicon-chevron-up" ng-show="!sort.descending"></i>
+</th>
+</tr>
+</thead>
+<tbody>
+  <tr ng-repeat="user in fetchuserData | firstPage:currentPage*pageSize | limitTo:pageSize | orderBy:sort.column:sort.descending" class="editable-row" >
+    <td>{{user.userName}}</td>
+    <td>
+      <span>
+       {{ user.email }}
+     </span>
+   </td>
+   <td>
+    <span>
+     {{ user.mobileNo}}    
+   </span>
+ </td>
+ <td>
+  <span>
+   {{ user.userType }}
+ </span>
+</td>
+<td>
+ <span>
+  {{ user.education }}
+</span>
+</td>
+<td>
+ <span>
+  {{ user.address  }}
+</span>
+</td>
+<td>
+ <div class="buttons" >
+  <a ng-href="/#/dashboard/usermgm/userdetails">
+   <button class="btn btn-primary editable-table-button btn-xs"  ng-click="userDetail(user.userId)" ng-disabled="adminRoles=='groups' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'">Edit</button>
+ </a>
+ <button class="btn btn-danger editable-table-button btn-xs" ng-click="deleteUser(user.userId)" data-confirm="Are you sure to delete this item?" ng-disabled="adminRoles=='groups' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'">Delete</button>
+</div>
+</td>
+</tr>
+</tbody>
+<tfoot>
+  <tr>
+   <td colspan="16" class="text-center">
+    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" style="" class="pagination"><</button>
+    <span>{{currentPage+1}}/{{numberOfPages()}}</span>
+    <button ng-disabled="currentPage >= fetchuserData.length/pageSize - 1" ng-click="currentPage=currentPage+1" class="pagination">></button>
+  </td>    
+ <!--  <td colspan="16" class="text-center">
+   <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+ </td> -->
+</tr>
+<!--  <tr>
+  <td colspan="16" class="text-center">
+   <div paging page="1" page-size="5" total="9" > </div>
+    <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+     </td>
+</tr> -->
+</tfoot>
+
+
+    <!-- <div class="row">
+        <div class="pagination pagination-centered" ng-show="rows.length">
+            <ul class="pagination-controle pagination">
+                <li>
+                    <button type="button" class="btn btn-primary"
+                            ng-disabled="curPage == 0"
+                            ng-click="curPage=curPage-1"> &lt; PREV</button>
+                </li>
+                <li>
+                    <span>Page {{curPage + 1}} of {{ numberOfPages() }}</span>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-primary"
+                            ng-disabled="(curPage >= numberOfPages() - 1) || (filteredRows.length < pageSize)"
+                            ng-click="curPage = curPage+1">NEXT &gt;</button>
+                </li>
+            </ul>
+        </div>        
+      </div> -->
+    </table>
+  </form>
+
+  <!-- </div> -->
+  <style type="text/css">
+   /* .paginationclass{
+      margin: 19px 28px;    
+    }
+    .paginationclass span{
+      margin-left:15px;
+      display:inline-block;
+    }
+    .pagination-controle li{
+      display: inline-block;
+    }
+    .pagination-controle button{
+      font-size: 12px;
+      margin-top: -26px;
+      cursor:pointer;   
+    }
+    .pagination{
+      margin:5px 12px !important;
+    }*/
+    .pagination{
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    color: #FFF;
+    background: #209e91;
+    cursor: pointer;
+
+  }
+  button:disabled {
+    background:#2e655f;
+    cursor: default;
+  }
+
+  </style>
+  <style>
+    input[type=text], select {
+      width: 50%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: transparent;
+    }

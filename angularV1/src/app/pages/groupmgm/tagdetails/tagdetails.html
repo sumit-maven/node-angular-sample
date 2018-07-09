@@ -1,0 +1,113 @@
+<h2 class="ng-scope" style="margin-bottom: 30px; margin-top: -8px; color:#fff">Tag Details</h2>
+<div class="widgets" ba-panel>
+   <form class="form-horizontal" role="form" method="post" name="registration">
+      <div class="col-md-12" ng-repeat="user in groupData" ><!-- ng-repeat="user in qData" -->
+         <div class="row">
+            <div class="col-sm-6">
+               <label for="input01" class="col-sm-6 control-label">Tag Name<span style="color:red; margin-left: 5%;"></span></label>
+               <div class="col-sm-6">
+                  <input type="text"  class="form-control" id="groupName"  placeholder="Group Name" ng-model="user.groupName"  style="color:rgba(0, 0, 0, 0.4) font-color:#fff" />
+               </div>
+            </div>
+            <div class="col-sm-6">
+               <label for="select" class="col-sm-6 control-label">Tag Type<span style="color:red; margin-left: 5%;" style="color:rgba(0, 0, 0, 0.4) font-color:#fff" ></span></label>
+               <div class="col-sm-6">
+                 <input type="text" placeholder="Type/Tech" class="form-control" ng-model="user.technology " name="technology"/>
+               </div>
+            </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-sm-6" class="form-group" ng-class="{'has-error': registration.phone.$error.number}">
+               <label for="input01" class="col-sm-6 control-label" >Description<span style="color:red; margin-left: 5%;"></span></label>
+               <div class="col-sm-6" > 
+                 <textarea type="text" placeholder="Tags" class="form-control"  ng-model="user.tags" name="tags"  />
+               </div>
+            </div>
+            <!-- <div class="col-sm-6">
+               <label for="userType" class="col-sm-6 control-label"> SME Type</label>
+               <div class="col-sm-6" >
+                  <input type="text" placeholder="SME Type" class="form-control"  ng-model="user.SMEs" name="SMEsType"  />
+
+               </div>
+            </div>
+         </div>
+         <br>
+         <div class="row">
+           <div class="col-sm-6" class="form-group" ng-class="{'has-error': registration.phone.$error.number}">
+               <label for="input01" class="col-sm-6 control-label" >No of Questions<span style="color:red; margin-left: 5%;"></span></label>
+               <div class="col-sm-6" > 
+                 <input type="text" placeholder="No of Ques." class="form-control"  ng-model="user.noOfQues" name="tags"  />
+               </div>
+            </div>
+            <div class="col-sm-6">
+               <label for="userType" class="col-sm-6 control-label">No of Users</label>
+               <div class="col-sm-6" >
+                  <input type="text" placeholder="No of Users" class="form-control"  ng-model="user.noOfMember" name="SMEs"  />
+
+               </div>
+            </div> -->
+         <!-- </div>
+         <br>
+         <div class="row">
+           <div class="col-sm-6">
+               <label for="level" class="col-sm-6 control-label">Total Marked as Favorite</label>
+               <div class="col-sm-6" >
+                  <input type="text" placeholder="No of Favorites Marks" class="form-control"  ng-model="user.noOfFavorite" name="level" style="color:rgba(0, 0, 0, 0.4) font-color:#fff" />
+
+               </div>
+            </div>
+            <div class="col-sm-6">
+              
+            <label for="groupStatus" class="col-sm-6 control-label">Status <span style="color:red; margin-left: 5%;"></span></label>
+            <div class="col-sm-6" >
+               <select ng-model="user.groupStatus" class="form-control" >
+                  <option value="Enabled">Enabled</option>
+                  <option value="Disabled">Disabled</option>
+               </select>
+            </div>
+         </div>
+               
+            </div> -->
+         
+         <br>
+
+      <br>
+      </div>
+      <div style="margin-left: 32%;font-size: 20px;"> <span>{{msg}}</span> </div>
+      <div class="modal-buttons clearfix">
+         <div class="button-wrapper">
+            <a ng-href="#/dashboard/groupmgm/grouplist" style="color: #fff;">
+               <button type="button" class="btn btn-primary btn-raised" style="float: initial;">Back</button>  
+            </a> 
+             <button type="button" class="btn btn-primary btn-raised" ng-click="updateGroup(user.groupId,user)" style="float: initial;">Update</button> <!-- ng-click="updateEmp(user)" -->
+         </div>
+      </div>
+      </div>
+   
+</form>
+</div>
+<style type="text/css">
+.al-breadcrumb {
+   background: none;
+   color: #ffffff;
+   padding: 0;
+   margin: 0;
+   float: right;
+   padding-top: 11px;
+   display: none;
+
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #dddddd;
+  border-color: #e2e2e2;
+}
+.form-control {
+    color: #ffffff;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+}
+</style>

@@ -1,0 +1,60 @@
+<div class="widgets">
+  <div class="row">
+    <div class="col-md-12">
+      <div ba-panel ba-panel-title="Group Questions" ba-panel-class="with-scroll">
+        <table class="table table-bordered table-hover table-condensed">
+         <tr>
+          <thead style="color:white; font-weight: bold; font-size:15px;" >
+            <td>Questions</td>
+            <td>Question Type</td>
+            <td>Category</td>
+            <!-- <td>Markes</td> -->
+            <td>Answers</td>
+            <td>Action</td>
+          </thead>
+        </tr>
+        <tr ng-repeat="user in qData" class="editable-row" >
+
+          <td>
+            <span  e-name="questionText" e-form="rowform" e-required>
+              {{ user.questionText  }} 
+              <!-- {{user.answers}}   -->
+            </span>
+          </td>
+          <td>
+            <span  e-name="category" e-form="rowform" e-required>
+              {{user.questionType }}
+            </span>  
+          </td>
+          <td>
+            <span  e-name="Correctans" e-form="rowform" e-required>
+              {{user.category }} 
+            </span>  
+          </td>
+          <!-- <td>
+            <span e-name="category"   e-form="rowform" e-required>
+            {{user.marks}} 
+            </span>  
+          </td> -->
+          <td ng-repeat="answer in user.answers">
+         <!--  {{answer}} -->
+            <span ng-repeat="opt in answer.Options" e-name="answers" e-form="rowform" e-required>
+              {{$index+1}}. &nbsp{{opt.description}}</br>
+            </span>  
+          </td>
+          <td>
+           <a href="/#/dashboard/groupmgm/quesupdate">
+             <button class="btn btn-primary editable-table-button btn-xs"  ng-click="getQuesById(user.questionId)" ng-disabled="adminRoles=='users' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'">Edit</button><!-- </a> -->
+             <button class="btn btn-danger editable-table-button btn-xs" ng-click="deleteQue(user.questionId)" ng-disabled="adminRoles=='users' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'">Delete</button>
+           </td>
+         </tr>
+       </table>
+     </div>
+   </div>
+ </div>
+</div>
+<style type="text/css">
+  .content-top {
+    display: none;
+  }
+</style>

@@ -1,0 +1,41 @@
+<div class="modal-content">
+	<div class="modal-header">
+		<button type="button" class="close" ng-click="$dismiss()" aria-label="Close">
+			<em class="ion-ios-close-empty sn-link-close"></em>
+		</button>
+		<center> <h4 class="modal-title" style="color: #c7271e;">
+			<b>Reset Password</b>
+			<h4>
+			</center>
+		</div>
+		<div class="modal-body">
+			<h5>
+				<div class="col-md-12">
+					<lable style="color: black;">
+						Please enter your registered email-id. 
+					</lable>
+					<input type="email" name="email-id" ng-model="email" class="form-control" style="border-color: grey" required>
+				</div>
+			</h5>
+		</div>
+		<br>
+		<br>
+		<div class="modal-footer">
+			<lable>
+				<input type="hidden" ng-model="assess.assessmentId">
+				<button type="button" class="btn btn-auth btn-primary" data-ng-disabled="!email"  ng-click="forgotPassword(email)">Request New Password</button>
+			</lable>
+			<button type="button" class="btn btn-danger btn-sm" ng-click="$dismiss()">Cancel</button>
+			
+		</div>
+		<div class="modal-body" style="margin-left: 4%;color:#790e3a">
+			<b><em>{{forgotMsg}}</em></b>
+		</div>
+		<br>
+	</div>
+	<style type="text/css">
+		li{
+			color:rgb(51, 47, 47)
+		}
+	</style>
+

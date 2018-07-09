@@ -1,0 +1,181 @@
+<h2 class="ng-scope" style="margin-bottom: 30px; margin-top: -5px;">Add Assessment</h2>
+<div class="widgets"  ba-panel>
+	<form ng-submit="addAssess(question)">
+		<div class="row">
+		<div class="col-sm-6">
+	<label for="input01" class="col-sm-4 control-label">Assessment Name</label>
+	<div class="col-sm-8">
+		<input type="text" class="form-control" id="input01" placeholder="Assessment Name" ng-model="question.Assessment">
+	</div>
+</div>
+			<div class="col-sm-6">
+				<label for="select" class="col-sm-4 control-label">Choose Category</label>
+				<div class="col-sm-8">
+					<div class="form-group">
+						<select class="form-control"  title="{{question.category}}" ng-model="question.category">
+							<option value="" selected disabled>Choose Category</option>
+							<option value="Technical">Technical</option>
+							<option value="Non-Technical">Non-Technical</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="col-sm-6">
+			   <label for="select" class="col-sm-4 control-label">Choose Sub-Category</label>
+			   <div class="col-sm-8">
+			    <div class="form-group">
+			      <select class="form-control " selectpicker title="Standard Select" ng-model="question.subCategory">
+			       <option value="" selected disabled>Choose Sub-Category</option>
+			        <option value="GATE" >Programming Test</option>
+			        <option value="SSC">SSC</option>
+					<option value="Bank">Bank</option>
+					<option value="JEE" >JEE</option>
+			        <option value="IPS">IPS</option>
+					<option value="UPSC">UPSC</option>
+					<option value="PET">PET</option>
+							
+			     </select>
+			   </div>
+			 </div>
+			</div>  -->
+ <!-- <div class="col-sm-6">
+   <label for="select" class="col-sm-4 control-label">Choose Sub-Category</label>
+   <div class="col-sm-8">
+    <div class="form-group">
+      <select class="form-control " selectpicker title="Standard Select" ng-model="question.subCategory">
+       <option value="" selected disabled>Choose Sub-Category</option>
+       <option ng-repeat="question in quesCatData" style="background-color: rgba(0, 0, 0, 0.34);" value="{{question.subCategory}}">{{ question.subCategory }}
+       </option>
+     </select>
+   </div>
+ </div>
+</div> -->
+
+<!-- <div class="col-sm-6">
+	<label for="select" class="col-sm-4 control-label">Level</label>
+	<div class="col-sm-8">
+		<div class="form-group">
+			<select class="form-control " selectpicker title="Standard Select" ng-model="question.privateType">
+				<option value="" selected disabled>Select an option</option>
+				<option value="y">Private</option>
+				<option value="n">Public</option>
+			</select>
+		</div>
+	</div>
+</div>
+
+<div class="col-sm-6">
+	<label for="input01" class="col-sm-4 control-label">Assessment Name</label>
+	<div class="col-sm-8">
+		<input type="text" class="form-control" id="input01" placeholder="Assessment Name" ng-model="question.Assessment">
+	</div>
+</div> -->
+</div>
+<br>
+<div class="row">
+	<div class="col-sm-6">
+		<label for="select" class="col-sm-4 control-label">Total Marks</label>
+		<div class="col-sm-8" >
+			<input type="number" placeholder="Total Marks" class="form-control" ng-model="question.marks"/>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<label for="input01" class="col-sm-4 control-label">Passing Marks</label>
+		<div class="col-sm-8" >
+			<input type="number" placeholder="Passing Marks" class="form-control" ng-model="question.passing"/>
+		</div>
+	</div>
+</div>
+<br>
+<div class="row">
+<div class="col-sm-6">
+	<label for="select" class="col-sm-4 control-label">Level</label>
+	<div class="col-sm-8">
+		<div class="form-group">
+			<select class="form-control " selectpicker title="Standard Select" ng-model="question.privateType">
+				<option value="" selected disabled>Select an option</option>
+				<option value="y">Private</option>
+				<option value="n">Public</option>
+			</select>
+		</div>
+	</div>
+</div>
+	<!-- <div class="col-sm-6">
+		<label for="input01" class="col-sm-4 control-label">Negative Marking</label>
+		<div class="col-sm-8" >
+			<input type="number" placeholder="Negative Marking" class="form-control" ng-model="question.negative" />
+		</div>
+	</div> -->
+	<div class="col-sm-6">
+		<label for="select" class="col-sm-4 control-label">Time Period</label>
+		<div class="col-sm-8">
+			<div class="form-group">
+				<!-- <input type="number" placeholder="Set Time Period" class="form-control" ng-model="question.time" /> -->
+				<select class="form-control " selectpicker title="Standard Select"  ng-model="question.time">			
+					<option value="" selected disabled>Choose Time Period</option>
+					<option value="20Minutes">20 Minutes</option>
+					<option value="30Minutes">30 Minutes</option>
+					<option value="45Minutes">45 Minutes</option>
+					<option value="60Minutes">60 Minutes</option>
+					<option value="120Minutes">120 Minutes</option>
+				</select>
+			</div>
+		</div>
+	</div> 
+</div>
+<br>
+<div class="row">
+	<!-- <div class="col-sm-6">
+		<label for="inlineRadio" class="col-sm-4 control-label">Reattempt Allow</label>
+		<div class="col-sm-2">
+			<label class="radio-inline custom-radio nowrap">
+				<input type="radio" name="RadioOptions" id="Radio1" value="yes" checked="checked" ng-model="question.allow">
+				<span>Yes</span>
+			</label>
+		</div>
+		<div class="col-sm-3">
+			<label class="radio-inline custom-radio nowrap">
+				<input type="radio" name="RadioOptions" id="eRadio2" value="no"  ng-model="question.allow">
+				<span>No</span>
+			</label>
+		</div>
+	</div>  -->
+	<div class="col-sm-6">
+		<label for="button" class="col-sm-4 control-label">Chooe Assessment Image</label>
+		<div class="col-sm-8 "> <!-- <a href class="change-userpic" ><button type="button" class="btn btn-default btn-with-icon save-profile " style="margin-top: 0%;">browse</button></a> -->
+			<input type="file" ng-show="true" id="uploadFile" value="value.assessmentImage" ng-model="value.assessmentImage" ng-file-select="onFileSelect($files)"/>
+			<!-- <input type="file" ng-show="true" id="uploadFile" ng-file-select="onFileSelect($files)" ng-model="question.assessmentImage" ng-click="uploadPicture()"/> --></div>
+		</div>
+	</div>
+	<br>
+	<div class="modal-buttons clearfix">
+
+		<div class="button-wrapper" >
+			<a href="/#/dashboard/assesments/assesmentslist"><button type="button" class="btn btn-primary btn-raised" style="float: initial;" >Back</button></a>
+			<button type="submit" ng-click="AddAssessment(question)" class="btn btn-primary btn-raised" style="float: initial;">Submit</button></div>
+		</div>
+	</form>
+</div>
+<style type="text/css">
+	.al-breadcrumb {
+		background: none;
+		color: #ffffff;
+		padding: 0;
+		margin: 0;
+		float: right;
+		padding-top: 11px;
+		display: none;
+	}
+	.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #dddddd;
+  border-color: #e2e2e2;
+}
+.form-control {
+    color: #ffffff;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+}
+</style>

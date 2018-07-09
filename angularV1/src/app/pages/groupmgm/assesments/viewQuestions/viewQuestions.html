@@ -1,0 +1,94 @@
+ <h2 class="ng-scope" style="margin-bottom: 30px; margin-top: 1px;">Update Questions</h2>
+ <div class="widgets">
+  <div class="row">
+    <div class="col-md-12">
+      <div ba-panel ba-panel-title="" ba-panel-class="with-scroll">
+        <div class="horizontal-scroll">
+          <style type="text/css">
+            .mathed{
+              color:red;
+            }
+          </style>
+          <table class="table table-bordered table-hover" st-table="addAssessQues">
+            <thead>
+              <tr class="sortable ">
+                <th>Select</th>
+                <th class="table-id" st-sort="questionId" st-sort-default="true">Question Id </th>
+                <th st-sort="questionText">Question Description</th>
+                <th st-sort="questionType">Question Type</th>
+                <th st-sort="category">Category</th> 
+                <th st-sort="marks">Marks</th>     
+              </tr>
+              <tr>
+                <th></th>
+                <th><input st-search="questionId" placeholder="Search Id" class="input-sm form-control search-input"
+                  type="search"/></th>
+                  <th><input st-search="questionText" placeholder="Search Text" class="input-sm form-control search-input"
+                   type="search"/></th>
+                   <th><input st-search="questionType" placeholder="Search Type" class="input-sm form-control search-input"
+                     type="search"/></th>
+                     <th><input st-search="category" placeholder="Search Category" class="input-sm form-control search-input"
+                       type="search"/></th>
+                       <th><input st-search="marks" placeholder="Search marks" class="input-sm form-control search-input"
+                         type="search"/></th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr ng-repeat="user in addAssessQues | filter : matchingQids[$index]" >
+
+                        <td class="check-td">
+                          <div class="mail-checkbox">
+                            <label class="checkbox-inline custom-checkbox nowrap">
+                              <input type="checkbox" ng-model="user.selected" value={{user.assessmentId}} /> 
+                              <span></span>
+                            </div>
+                          </td>
+                        </td>
+                       <!--  <td ng-show="matchingQids[$index]!=user.questionId">        
+                         <span class="mathed" e-name="questionId" e-form="rowform" e-required ng-model="user.questionId" value={{user.questionId}}>
+                         {{matchingQids[$index]}} 
+                        </span>
+                      </td> -->
+                      <td ng-if="user.questionId!=''">        
+                       <span  e-name="questionId" e-form="rowform" e-required ng-model="user.questionId" value={{user.questionId}}>
+                        {{user.questionId}} 
+                      </span>
+                    </td>
+
+                    <td>        
+                     <span  e-name="questionText" e-form="rowform" e-required ng-model="user.questionText">
+                      {{ user.questionText }}
+                    </span>
+                  </td>
+                  <td>
+                    <span  e-name="questionType" e-form="rowform" e-required ng-model="user.questionType">
+                      {{ user.questionType }}
+                    </span>
+                  </td>
+                  <td >
+                    <span  e-name="category" e-form="rowform" e-required  ng-model="user.category">
+                      {{user.category }}
+                    </span>
+                  </td>
+                  <td >
+                    <span  e-name="group"  e-form="rowform"  e-required ng-model="user.marks">
+                      {{ user.marks}}
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="button-wrapper">
+             <a href="/#/dashboard/assesments/assesmentslist"><button type="button" class="btn btn-primary btn-raised" style="float: initial;">Back</button></a>
+             <button type="submit" class="btn btn-primary btn-raised" ng-click="addAsesQues(assessId)">Update Questions</button> 
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <style type="text/css">
+  .content-top {
+    display: none;
+  }
+</style>

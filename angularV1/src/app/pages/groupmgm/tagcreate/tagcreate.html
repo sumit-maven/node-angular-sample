@@ -1,0 +1,83 @@
+<h2 class="ng-scope" style="margin-bottom: 30px; margin-top: -8px; color:#fff">Add Tag</h2>
+<div class="widgets" ba-panel>
+   <form class="form-horizontal" role="form" method="post" name="registration">
+      <div class="col-md-12"  ><!-- ng-repeat="user in empData" -->
+         <div class="row">
+            <div class="col-sm-6">
+               <label for="input01" class="col-sm-4 control-label">Tag Name<span style="color:red; margin-left: 5%;"></span></label>
+               <div class="col-sm-8">
+                  <input type="text"  class="form-control" id="groupName"  placeholder="Tag Name" ng-model="user.groupName"  style="color:rgba(0, 0, 0, 0.4) font-color:#fff" />
+               </div>
+            </div>
+            <div class="col-sm-6">
+               <label for="select" class="col-sm-4 control-label">Tag Type<span style="color:red; margin-left: 5%;" style="color:rgba(0, 0, 0, 0.4) font-color:#fff" ></span></label>
+               <div class="col-sm-8">
+                  <input type="text" placeholder="Tag Type" class="form-control" ng-model="user.technology "   name="technology"/>
+               </div>
+            </div>
+         </div>
+         <br>
+         
+         <br>
+         <div class="row">
+           <div class="col-sm-6">
+               <label for="level" class="col-sm-4 control-label">Description</label>
+               <div class="col-sm-8" >
+                  <textarea placeholder="Description" class="form-control"  ng-model="user.level" name="Description" style="color:rgba(0, 0, 0, 0.4) font-color:#fff" />
+
+               </div>
+            </div>
+<!--             <div class="col-sm-6">
+              
+            <label for="empStatus" class="col-sm-4 control-label">Status <span style="color:red; margin-left: 5%;"></span></label>
+            <div class="col-sm-8" >
+               <select ng-model="user.groupStatus" class="form-control" >
+                  <option value="Enabled">Enabled</option>
+                  <option value="Disabled">Disabled</option>
+               </select>
+            </div>
+         </div> -->
+               
+            </div>
+         
+         <br>
+
+      <br>
+      <div style="margin-left: 32%;font-size: 20px;"> <span>{{msg}}</span> </div>
+      <div class="modal-buttons clearfix">
+         <div class="button-wrapper">
+            <a ng-href="#/dashboard/groupmgm/grouplist" style="color: #fff;">
+               <button type="button" class="btn btn-primary btn-raised" style="float: initial;">Back</button>  
+            </a> 
+             <button type="button" class="btn btn-primary btn-raised" ng-click = "addGroup(user)"  style="float: initial;">Submit</button> <!-- ng-click="updateEmp(user)" -->
+         </div>
+      </div>
+      </div>
+   
+</form>
+</div>
+</div>
+<style type="text/css">
+.al-breadcrumb {
+   background: none;
+   color: #ffffff;
+   padding: 0;
+   margin: 0;
+   float: right;
+   padding-top: 11px;
+   display: none;
+
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #dddddd;
+  border-color: #e2e2e2;
+}
+.form-control {
+    color: #ffffff;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+}
+</style>

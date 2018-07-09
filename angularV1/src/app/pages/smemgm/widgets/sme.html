@@ -1,0 +1,102 @@
+<div class="horizontal-scroll">
+<!--    <div class="form-group select-page-size-wrap ">
+      <a ng-href="/#/dashboard/smemgm/smecreate"> 
+         <button type="button" class="btn btn-primary" style="">
+            Add SME
+         </button>
+      </a>
+   </div> -->
+   <form >
+  <input type="text" id="fname" name="firstname" placeholder="Search SME ">
+
+  <button class="btn btn-primary editable-table-button btn-xs" style="
+    width: 76px;
+    height: 43px;
+" >Go!</button>
+</form>
+   <table class="table table-bordered table-hover table-condensed" st-table="">
+      <thead>
+         <tr class="sortable " style="background-color: #209E91;">
+            <td st-sort="assessmentName" >Name</td>
+
+            <td st-sort="reattempt">Categories</td>
+            <td st-sortotalMarks">Total Marks</td>
+
+            <td st-sort="passingMarks">Passing Marks</td>
+            <!-- <td st-sort="reattempt">Reattempt </td>
+            <td st-sort="timePeriod">Time Period</td>
+            <td st-sort="createdDate">Created Date</td> -->
+            <td >Action</td>
+         </tr>
+      </thead>
+      <tbody>
+         <tr  >
+            <td>
+            <span>
+                  Rohit
+               </span>
+               
+               </td>
+             <td>
+               <span>
+                  Technical
+               </span>
+            </td>
+            <td>
+               <span>
+100               </span>
+            </td>
+            <td>
+               <span>
+40               </span>
+            </td>
+           <!--  <td>
+               <span>
+                  {{ asses.reattempt  }}
+               </span>
+            </td>
+           
+            <td>
+               <span>
+                  {{ asses.timePeriod  }}
+               </span>
+            </td>
+            <td>
+               <span>
+                  {{ asses.createdDate | date:'MM/dd/yyyy'  }}
+               </span>
+            </td> -->
+            <td>
+               <div class="buttons" >
+                  <a ng-href="/#/dashboard/smemgm/smemgmupdate">
+                   <button class="btn btn-primary editable-table-button btn-xs"  ng-click="assessmentDetail(asses.assessmentId)" ng-disabled="adminRoles=='users' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='groups'">Edit</button>
+                  </a>
+                  <button type="button" class="btn btn-warning  btn-xs" ng-click="viewAsses(asses.assessmentId);getAllQuestions(asses.assessmentId);" >Update Questions</button>
+                  <a ng-href="/#/dashboard/smemgm/viewAssessment">
+                     <button type="button" class="btn btn-default  btn-xs" ng-click="viewAsses(asses.assessmentId)" >View Questions</button>
+
+                  </a>
+                  <button class="btn btn-danger editable-table-button btn-xs" ng-click="deleteSingleAssess(asses.assessmentId)" data-confirm="Are you sure to delete this item?" ng-disabled="adminRoles=='users' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='groups'">Delete</button>
+               </div>
+            </td>
+         </tr>
+      </tbody>
+      <tfoot>
+         <tr>
+            <td colspan="16" class="text-center">
+               <div st-pagination="" st-items-by-page="smartTablePageSize" st-displayed-pages="5"></div>
+            </td>
+         </tr>
+      </tfoot>
+   </table>
+   <style>
+input[type=text], select {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: transparent;
+}

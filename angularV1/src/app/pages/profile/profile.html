@@ -1,0 +1,56 @@
+<div ba-panel ba-panel-class="profile-page">
+   <div class="panel-content">
+      
+   </div>
+   <h3 class="with-line">General Information </h3>
+   <div class="row">
+    <div class="col-md-12">
+
+     <div class="col-md-11" ng-repeat="admin in adminData">
+      <div class="form-group row clearfix" >
+       <label for="inputFirstName" class="col-sm-2 control-label">Name</label>
+       <div class="col-sm-4">
+        <input type="text" class="form-control" id="inputFirstName" placeholder="" ng-model="admin.adName">
+      </div>
+      <label for="inputLastName" class="col-sm-2 control-label">Email-Id</label>
+      <div class="col-sm-4">
+        <input type="email" class="form-control" id="inputEmail" placeholder=""  ng-model="admin.email">
+      </div>
+    </div>
+    <div class="form-group row clearfix">
+      <label for="inputInstitute" class="col-sm-2 control-label" >Password</label>
+      <div class="col-sm-4">
+       <input type="Password" name="password"  class="form-control"  placeholder="New Password" ng-model="admin.password" ng-minlength="6" ng-maxlength="15">
+     </div>
+     <label for="inputInstitute" class="col-sm-2 control-label" >Confirm Password</label>
+     <div class="col-sm-4">
+      <input type="password" class="form-control"  match-password="password" name="confirmPassword" placeholder="Confirm Password" ng-model="admin.confirmPass" ng-minlength="6" ng-maxlength="15">
+      <div ng-messages="profileForm.confirmPassword.$error" ng-if="profileForm.$submitted || profileForm.confirmPassword.$dirty" ng-messages-multiple="ng-messages-multiple" class="error-messages slide-right">
+      </div>
+    </div>
+    
+</div>
+    <center>
+      <button type="button" class="btn btn-primary btn-with-icon save-profile" ng-click="updateProfileDetail(admin.adminId, admin)">
+        <i class="ion-android-checkmark-circle"></i>Update Profile</button>
+      </center>
+    </div>
+
+      </div>
+     
+   </div>
+   
+</div>
+</div>
+</div> 
+</div>
+<style type="text/css">
+
+.form-control {
+    color: #ffffff;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+}
+</style>

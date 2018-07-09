@@ -1,0 +1,228 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.5
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly install normalizeTree
+8 silly loadCurrentTree Finishing
+9 silly loadIdealTree Starting
+10 silly install loadIdealTree
+11 silly cloneCurrentTree Starting
+12 silly install cloneCurrentTreeToIdealTree
+13 silly cloneCurrentTree Finishing
+14 silly loadShrinkwrap Starting
+15 silly install loadShrinkwrap
+16 silly loadShrinkwrap Finishing
+17 silly loadAllDepsIntoIdealTree Starting
+18 silly install loadAllDepsIntoIdealTree
+19 silly fetchNamedPackageData angular-paging
+20 silly mapToRegistry name angular-paging
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry data Result {
+23 silly mapToRegistry   raw: 'angular-paging',
+23 silly mapToRegistry   scope: null,
+23 silly mapToRegistry   escapedName: 'angular-paging',
+23 silly mapToRegistry   name: 'angular-paging',
+23 silly mapToRegistry   rawSpec: '',
+23 silly mapToRegistry   spec: 'latest',
+23 silly mapToRegistry   type: 'tag' }
+24 silly mapToRegistry uri https://registry.npmjs.org/angular-paging
+25 silly fetchNamedPackageData gulp-install
+26 silly mapToRegistry name gulp-install
+27 silly mapToRegistry using default registry
+28 silly mapToRegistry registry https://registry.npmjs.org/
+29 silly mapToRegistry data Result {
+29 silly mapToRegistry   raw: 'gulp-install',
+29 silly mapToRegistry   scope: null,
+29 silly mapToRegistry   escapedName: 'gulp-install',
+29 silly mapToRegistry   name: 'gulp-install',
+29 silly mapToRegistry   rawSpec: '',
+29 silly mapToRegistry   spec: 'latest',
+29 silly mapToRegistry   type: 'tag' }
+30 silly mapToRegistry uri https://registry.npmjs.org/gulp-install
+31 silly fetchNamedPackageData password-reset-nodemailer
+32 silly mapToRegistry name password-reset-nodemailer
+33 silly mapToRegistry using default registry
+34 silly mapToRegistry registry https://registry.npmjs.org/
+35 silly mapToRegistry data Result {
+35 silly mapToRegistry   raw: 'password-reset-nodemailer',
+35 silly mapToRegistry   scope: null,
+35 silly mapToRegistry   escapedName: 'password-reset-nodemailer',
+35 silly mapToRegistry   name: 'password-reset-nodemailer',
+35 silly mapToRegistry   rawSpec: '',
+35 silly mapToRegistry   spec: 'latest',
+35 silly mapToRegistry   type: 'tag' }
+36 silly mapToRegistry uri https://registry.npmjs.org/password-reset-nodemailer
+37 silly fetchNamedPackageData short-id-gen
+38 silly mapToRegistry name short-id-gen
+39 silly mapToRegistry using default registry
+40 silly mapToRegistry registry https://registry.npmjs.org/
+41 silly mapToRegistry data Result {
+41 silly mapToRegistry   raw: 'short-id-gen',
+41 silly mapToRegistry   scope: null,
+41 silly mapToRegistry   escapedName: 'short-id-gen',
+41 silly mapToRegistry   name: 'short-id-gen',
+41 silly mapToRegistry   rawSpec: '',
+41 silly mapToRegistry   spec: 'latest',
+41 silly mapToRegistry   type: 'tag' }
+42 silly mapToRegistry uri https://registry.npmjs.org/short-id-gen
+43 silly fetchNamedPackageData shortid
+44 silly mapToRegistry name shortid
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry data Result {
+47 silly mapToRegistry   raw: 'shortid',
+47 silly mapToRegistry   scope: null,
+47 silly mapToRegistry   escapedName: 'shortid',
+47 silly mapToRegistry   name: 'shortid',
+47 silly mapToRegistry   rawSpec: '',
+47 silly mapToRegistry   spec: 'latest',
+47 silly mapToRegistry   type: 'tag' }
+48 silly mapToRegistry uri https://registry.npmjs.org/shortid
+49 verbose request uri https://registry.npmjs.org/angular-paging
+50 verbose request no auth needed
+51 info attempt registry request try #1 at 7:29:44 AM
+52 verbose request id 894dc43fa2c2ecfb
+53 http request GET https://registry.npmjs.org/angular-paging
+54 verbose request uri https://registry.npmjs.org/gulp-install
+55 verbose request no auth needed
+56 info attempt registry request try #1 at 7:29:44 AM
+57 http request GET https://registry.npmjs.org/gulp-install
+58 verbose request uri https://registry.npmjs.org/password-reset-nodemailer
+59 verbose request no auth needed
+60 info attempt registry request try #1 at 7:29:44 AM
+61 http request GET https://registry.npmjs.org/password-reset-nodemailer
+62 verbose request uri https://registry.npmjs.org/short-id-gen
+63 verbose request no auth needed
+64 info attempt registry request try #1 at 7:29:44 AM
+65 http request GET https://registry.npmjs.org/short-id-gen
+66 verbose request uri https://registry.npmjs.org/shortid
+67 verbose request no auth needed
+68 info attempt registry request try #1 at 7:29:44 AM
+69 http request GET https://registry.npmjs.org/shortid
+70 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+71 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+72 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+73 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+74 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+75 info attempt registry request try #2 at 7:29:54 AM
+76 http request GET https://registry.npmjs.org/angular-paging
+77 info attempt registry request try #2 at 7:29:54 AM
+78 http request GET https://registry.npmjs.org/gulp-install
+79 info attempt registry request try #2 at 7:29:54 AM
+80 http request GET https://registry.npmjs.org/password-reset-nodemailer
+81 info attempt registry request try #2 at 7:29:54 AM
+82 http request GET https://registry.npmjs.org/short-id-gen
+83 info attempt registry request try #2 at 7:29:54 AM
+84 http request GET https://registry.npmjs.org/shortid
+85 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+86 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+87 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+88 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+89 info retry will retry, error on last attempt: Error: getaddrinfo ENOENT registry.npmjs.org:443
+90 info attempt registry request try #3 at 7:30:54 AM
+91 http request GET https://registry.npmjs.org/angular-paging
+92 info attempt registry request try #3 at 7:30:54 AM
+93 http request GET https://registry.npmjs.org/gulp-install
+94 info attempt registry request try #3 at 7:30:54 AM
+95 http request GET https://registry.npmjs.org/password-reset-nodemailer
+96 info attempt registry request try #3 at 7:30:54 AM
+97 http request GET https://registry.npmjs.org/short-id-gen
+98 info attempt registry request try #3 at 7:30:54 AM
+99 http request GET https://registry.npmjs.org/shortid
+100 silly fetchPackageMetaData Error: getaddrinfo ENOENT registry.npmjs.org:443
+100 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+100 silly fetchPackageMetaData     at errnoException (dns.js:33:15)
+100 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+100 silly fetchPackageMetaData  error for angular-paging@^2.2.2 { Error: getaddrinfo ENOENT registry.npmjs.org:443
+100 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+100 silly fetchPackageMetaData     at errnoException (dns.js:33:15)
+100 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+100 silly fetchPackageMetaData   code: 'ENOENT',
+100 silly fetchPackageMetaData   errno: 'ENOENT',
+100 silly fetchPackageMetaData   syscall: 'getaddrinfo',
+100 silly fetchPackageMetaData   hostname: 'registry.npmjs.org',
+100 silly fetchPackageMetaData   host: 'registry.npmjs.org',
+100 silly fetchPackageMetaData   port: 443 }
+101 silly fetchPackageMetaData Error: getaddrinfo ENOENT registry.npmjs.org:443
+101 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+101 silly fetchPackageMetaData     at errnoException (dns.js:33:15)
+101 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+101 silly fetchPackageMetaData  error for gulp-install@^0.6.0 { Error: getaddrinfo ENOENT registry.npmjs.org:443
+101 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+101 silly fetchPackageMetaData     at errnoException (dns.js:33:15)
+101 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+101 silly fetchPackageMetaData   code: 'ENOENT',
+101 silly fetchPackageMetaData   errno: 'ENOENT',
+101 silly fetchPackageMetaData   syscall: 'getaddrinfo',
+101 silly fetchPackageMetaData   hostname: 'registry.npmjs.org',
+101 silly fetchPackageMetaData   host: 'registry.npmjs.org',
+101 silly fetchPackageMetaData   port: 443 }
+102 silly fetchPackageMetaData Error: getaddrinfo ENOENT registry.npmjs.org:443
+102 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+102 silly fetchPackageMetaData     at errnoException (dns.js:33:15)
+102 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+102 silly fetchPackageMetaData  error for password-reset-nodemailer@0.0.1 { Error: getaddrinfo ENOENT registry.npmjs.org:443
+102 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+102 silly fetchPackageMetaData     at errnoException (dns.js:33:15)
+102 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+102 silly fetchPackageMetaData   code: 'ENOENT',
+102 silly fetchPackageMetaData   errno: 'ENOENT',
+102 silly fetchPackageMetaData   syscall: 'getaddrinfo',
+102 silly fetchPackageMetaData   hostname: 'registry.npmjs.org',
+102 silly fetchPackageMetaData   host: 'registry.npmjs.org',
+102 silly fetchPackageMetaData   port: 443 }
+103 silly fetchPackageMetaData Error: getaddrinfo ENOENT registry.npmjs.org:443
+103 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+103 silly fetchPackageMetaData     at errnoException (dns.js:33:15)
+103 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+103 silly fetchPackageMetaData  error for short-id-gen@^1.1.2 { Error: getaddrinfo ENOENT registry.npmjs.org:443
+103 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+103 silly fetchPackageMetaData     at errnoException (dns.js:33:15)
+103 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+103 silly fetchPackageMetaData   code: 'ENOENT',
+103 silly fetchPackageMetaData   errno: 'ENOENT',
+103 silly fetchPackageMetaData   syscall: 'getaddrinfo',
+103 silly fetchPackageMetaData   hostname: 'registry.npmjs.org',
+103 silly fetchPackageMetaData   host: 'registry.npmjs.org',
+103 silly fetchPackageMetaData   port: 443 }
+104 silly fetchPackageMetaData Error: getaddrinfo ENOENT registry.npmjs.org:443
+104 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+104 silly fetchPackageMetaData     at errnoException (dns.js:33:15)
+104 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+104 silly fetchPackageMetaData  error for shortid@^2.2.8 { Error: getaddrinfo ENOENT registry.npmjs.org:443
+104 silly fetchPackageMetaData     at Object.exports._errnoException (util.js:1020:11)
+104 silly fetchPackageMetaData     at errnoException (dns.js:33:15)
+104 silly fetchPackageMetaData     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+104 silly fetchPackageMetaData   code: 'ENOENT',
+104 silly fetchPackageMetaData   errno: 'ENOENT',
+104 silly fetchPackageMetaData   syscall: 'getaddrinfo',
+104 silly fetchPackageMetaData   hostname: 'registry.npmjs.org',
+104 silly fetchPackageMetaData   host: 'registry.npmjs.org',
+104 silly fetchPackageMetaData   port: 443 }
+105 silly rollbackFailedOptional Starting
+106 silly rollbackFailedOptional Finishing
+107 silly runTopLevelLifecycles Finishing
+108 silly install printInstalled
+109 verbose stack Error: getaddrinfo ENOENT registry.npmjs.org:443
+109 verbose stack     at Object.exports._errnoException (util.js:1020:11)
+109 verbose stack     at errnoException (dns.js:33:15)
+109 verbose stack     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:76:26)
+110 verbose cwd C:\Users\hp\Desktop\study\badugaAdmin
+111 error Windows_NT 10.0.14393
+112 error argv "C:\\Program Files (x86)\\nodejs\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+113 error node v6.11.5
+114 error npm  v3.10.10
+115 error code ENOENT
+116 error errno ENOENT
+117 error syscall getaddrinfo
+118 error enoent getaddrinfo ENOENT registry.npmjs.org:443
+119 error enoent getaddrinfo ENOENT registry.npmjs.org:443
+119 error enoent This is most likely not a problem with npm itself
+119 error enoent and is related to npm not being able to find a file.
+120 verbose exit [ 1, true ]

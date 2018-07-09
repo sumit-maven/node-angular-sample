@@ -1,0 +1,95 @@
+<h2 class="ng-scope" style="margin-bottom: 30px; margin-top: -8px; color:#fff">Add SME</h2>
+<div class="widgets" ba-panel>
+   <form class="form-horizontal" role="form" method="post" name="registration">
+      <div class="col-md-12"  ><!-- ng-repeat="user in empData" -->
+         <div class="row">
+            <div class="col-sm-6">
+               <label for="input01" class="col-sm-4 control-label">SME Name<span style="color:red; margin-left: 5%;"></span></label>
+               <div class="col-sm-8">
+                  <input type="text"  class="form-control" id="userName"  placeholder="User Name" ng-model="user.userName"  style="color:rgba(0, 0, 0, 0.4) font-color:#fff" />
+               </div>
+            </div>
+            <div class="col-sm-6">
+               <label for="select" class="col-sm-4 control-label">SME Type<span style="color:red; margin-left: 5%;" style="color:rgba(0, 0, 0, 0.4) font-color:#fff" ></span></label>
+               <div class="col-sm-8">
+                  <input type="text" placeholder="" class="form-control" ng-model="user. "   name=""/>
+               </div>
+            </div>
+         </div>
+         <br>
+         <!-- <div class="row">
+           <div class="col-sm-6" class="form-group" ng-class="{'has-error': registration.phone.$error.number}">
+               <label for="input01" class="col-sm-4 control-label" >Level<span style="color:red; margin-left: 5%;">*</span></label>
+               <div class="col-sm-8" > 
+                  <input type="text"  value="" ng-model="user.mobileNo"  placeholder="Mobile No" class="form-control" ng-minlength="10" ng-maxlength="10"  pattern="[0-9]{10}" title="Enter your mobile number"  >
+               </div>
+            </div>
+            <div class="col-sm-6">
+               <label for="userType" class="col-sm-4 control-label"> SME Name</label>
+               <div class="col-sm-8" >
+                  <input type="text" placeholder="User Type" class="form-control"  ng-model="user.userType" name="userType"  />
+
+               </div>
+            </div>
+         </div> -->
+         <br>
+         <div class="row">
+           <div class="col-sm-6">
+               <label for="level" class="col-sm-4 control-label">SME Level</label>
+               <div class="col-sm-8" >
+                  <input type="text" placeholder="User Level" class="form-control"  ng-model="user.level" name="level" style="color:rgba(0, 0, 0, 0.4) font-color:#fff" />
+
+               </div>
+            </div>
+            <div class="col-sm-6">
+              
+            <label for="empStatus" class="col-sm-4 control-label">Status <span style="color:red; margin-left: 5%;"></span></label>
+            <div class="col-sm-8" >
+               <select ng-model="user.groupStatus" class="form-control" >
+                  <option value="Enabled">Enabled</option>
+                  <option value="Disabled">Disabled</option>
+               </select>
+            </div>
+         </div>
+               
+            </div>
+         </div>
+         <br>
+
+      <br>
+      <div style="margin-left: 32%;font-size: 20px;"> <span></span> </div>
+      <div class="modal-buttons clearfix">
+         <div class="button-wrapper">
+            <a ng-href="#/dashboard/groupmgm/grouplist" style="color: #fff;">
+               <button type="button" class="btn btn-primary btn-raised" style="float: initial;">Back</button>  
+            </a> 
+             <button type="button" class="btn btn-primary btn-raised"  style="float: initial;">Submit</button> <!-- ng-click="updateEmp(user)" -->
+         </div>
+      </div>
+   </div>
+</form>
+</div>
+<style type="text/css">
+.al-breadcrumb {
+   background: none;
+   color: #ffffff;
+   padding: 0;
+   margin: 0;
+   float: right;
+   padding-top: 11px;
+   display: none;
+
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #dddddd;
+  border-color: #e2e2e2;
+}
+.form-control {
+    color: #ffffff;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-shadow: none;
+}
+</style>

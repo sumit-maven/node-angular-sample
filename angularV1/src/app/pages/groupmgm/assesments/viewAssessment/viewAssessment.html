@@ -1,0 +1,63 @@
+<!-- <div class="widgets" ba-panel>
+
+ <u> <h4 with-line>Description</h4></u>
+  <div ng-repeat="data in fetchAssesmentData">
+  <h5>{{data.description}}</h5>
+</div>
+</div> -->
+<div class="widgets">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div ba-panel ba-panel-title="Assessment Questions" ba-panel-class="with-scroll">
+
+        <table class="table table-bordered table-hover table-condensed">
+         <tr>
+          <thead style="color:white; font-weight: bold; font-size:15px;" >
+            <td>Questions</td>
+            <td>Question Type</td>
+            <td>Category</td>
+            <td>Action</td>
+          </thead>
+        </tr>
+        <tr ng-repeat="user in viewAssessData" class="editable-row" >
+
+          <td>
+            <span  e-name="questionText" e-form="rowform" e-required>
+              {{ user.questionText  }}
+            </span>
+          </td>
+     <!-- <td>
+          <span ng-repeat="data in user.answers.Options" e-name="Options" e-form="rowform" e-required>
+          {{ data }}<br>
+        </span>
+      </td> -->
+      <td>
+        <span  e-name="category"   e-form="rowform" e-required>
+          {{user.questionType }}
+        </span>  
+      </td>
+      <!-- <td>
+      <span  e-name="Correctans"   e-form="rowform" e-required>
+          {{user.answers.Correctans }}
+        </span>  
+      </td> -->
+      <td>
+        <span  e-name="category"   e-form="rowform" e-required>
+          {{user.category }}
+        </span>  
+      </td>
+      <td>
+
+        <a href="/#/assesment/assesmentlist">
+        <button class="btn btn-primary editable-table-button btn-xs"  ng-click="assToques()">Edit</button><!-- </a> -->
+        <button class="btn btn-danger editable-table-button btn-xs" ng-click="deleteQue(user.questionId)">Delete</button>
+
+      </td>
+    </tr>
+  </table>
+
+</div>
+</div>
+</div>
+</div>

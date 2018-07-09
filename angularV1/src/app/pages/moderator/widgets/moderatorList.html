@@ -1,0 +1,84 @@
+<div class="horizontal-scroll">
+	<div class="form-group select-page-size-wrap ">
+		<a ng-href="/#/dashboard/moderator/addmoderator"> 
+			<button type="button" class="btn btn-primary" ng-disabled="adminRoles=='users' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'"  >
+				Add Moderator
+			</button>
+		</a>
+	</div>
+</div>
+<form>
+	<input type="text"  placeholder="Search Admin/Moderator" ng-model="SearchAdmin">
+	<button class="btn btn-primary editable-table-button btn-xs" style="width: 76px;height: 43px;" ng-click="searchUser(userName)">Go!</button>
+	<button class="btn btn-primary" ng-click="exportData(fetchuserData)" style="border-top-width: 8px;border-bottom-width: 5px; border-right-width: 3px;margin-left: 32%;
+	margin-bottom: 1%;" ng-disabled="adminRoles=='groups' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'"> Export </button>
+	<table class="table table-bordered table-hover table-condensed" st-table="allmodsdata">
+		<thead>
+			<tr class="sortable" style="background-color: #209E91;">
+				<td>Name</td>
+				<td>Email-Id</td>
+				<td>Assigned Group</td>
+				<td>Actions</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="mod in allmodsdata">
+				<td>{{mod.modName}}</td>
+				<td>
+					<span>
+						{{mod.email}}
+					</span>
+				</td>
+				<td>
+					<span ng-repeat="grp in mod.assignedGrps">
+						{{grp}},
+					</span>
+				</td>
+				<td>
+					<div class="buttons">
+						<a ng-href="/#/dashboard/moderator/moderatordetails">
+							<button class="btn btn-primary editable-table-button btn-xs"  ng-click="getModById(mod.modId)" ng-disabled="adminRoles=='groups' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'">Edit</button>
+						</a>
+						<button class="btn btn-danger editable-table-button btn-xs" ng-click="deleteUser(user.userId)" data-confirm="Are you sure to delete this item?" ng-disabled="adminRoles=='groups' || adminRoles=='assessment' || adminRoles=='Reporting' || adminRoles=='SMEs'">Delete</button>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+
+			</tr>
+		</tfoot>
+	</table>
+</form>
+
+<style type="text/css">
+	.paginationclass{
+		margin: 19px 28px;    
+	}
+	.paginationclass span{
+		margin-left:15px;
+		display:inline-block;
+	}
+	.pagination-controle li{
+		display: inline-block;
+	}
+	.pagination-controle button{
+		font-size: 12px;
+		margin-top: -26px;
+		cursor:pointer;   
+	}
+	.pagination{
+		margin:5px 12px !important;
+	}
+	input[type=text], select {
+		width: 50%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+		background-color: transparent;
+	}
+</style>

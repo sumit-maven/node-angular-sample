@@ -1,0 +1,48 @@
+<main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
+  <ba-sidebar></ba-sidebar>
+  <page-top></page-top>
+
+  <div class="al-main">
+    <div class="al-content">
+
+      <content-top></content-top>
+
+      <div ui-view></div>
+    </div>
+  </div>
+  <back-top></back-top>
+</main>
+<style type="text/css">
+.al-footer-main {
+    float: right;
+}
+</style>
+<footer class="al-footer clearfix" style="bottom:0;position: fixed;background-color: rgba(0, 0, 0, 0.4);padding-top: 1%;padding-bottom: 1%;height: 39px;">
+  <div class="">
+<div class="al-copy"  style="color:#fff;">Copyright © 2017 &nbsp;<a href="http://www.baduga.com" style="color:#fff">baduga.com</a></div>
+</div>
+
+
+  <div class="al-footer-main clearfix">
+
+  <div class="al-copy"  style="color:#ffffff">Crafted by  <a href="http://www.blucursor.com/">blu<span class="word-rotate-items" style="color:#0177C8;">||</span>Cursor Infotech Pvt Ltd</a></div>
+      <ul class="al-share clearfix">
+        <li><a href="https://www.facebook.com/blucursor/?fref=nf"><i class="socicon socicon-facebook"></i></a></li>
+        <li><a href="https://twitter.com/bluCursor"><i class="socicon socicon-twitter"></i></a></li>
+        <li><a href=""><i class="socicon socicon-google"></i></a></li>
+        <li><a href="https://www.linkedin.com/company/3684824?trk=tyah&trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A3684824%2Cidx%3A2-1-2%2CtarId%3A1470642266242%2Ctas%3Ablucursor"><i class="socicon socicon-linkedin"></i></a></li>
+      </ul>
+    </div>
+</div>
+</footer>
+
+<div id="preloader" ng-show="!$pageFinishedLoading">
+  <div></div>
+</div>
+<style type="text/css">
+  body a:hover {
+    color: #fff;
+}
+
+</style>
+
