@@ -4,14 +4,14 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('baduga:server');
+var debug = require('debug')('serverNodeJs:server');
 var http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || ''); // Api Port Set here ex 4131
+var port = normalizePort(process.env.PORT || '4446'); // Api Port Set here ex 4131
 app.set('port', port);
 
 /**

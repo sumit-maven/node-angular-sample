@@ -55,16 +55,6 @@ var db = require('./model/db');
 var app = express();
 
 
-// // For Sending Mail
-
-// var smtpTransport = nodemailer.createTransport("SMTP",{
-//    service: "Gmail",  // sets automatically host, port and connection security settings
-//    auth: {
-//      user: "abhishekgandrademca13@acropolis.in",
-//      pass: "ananya2112"
-//    }
-//  });
-
 app.all('*', function(req, res, next) {
  res.header("Access-Control-Allow-Origin", "*");
  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
