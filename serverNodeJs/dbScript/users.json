@@ -1,0 +1,2 @@
+{"_id":{"$oid":"59d4ca09dcf92f1b240d811e"},"email":"s@gmail.com","mobileNo":"9907748478","password":"1234","address":"indore","userName":"Shraddha","userId":"Sk-M5Bf3Z","userStatus":"Enabled","userType":"Basic","level":"0","__v":0}
+{"_id":{"$oid":"59d5c39f3bb560261e0afd5e"},"email":"n@gmail.com","mobileNo":"9669910139","password":"1234","address":"indore","userName":"Rohit","userId":"B1OiQrQn-","userStatus":"Enabled","userType":"Basic","level":"0","createdDate":{"$date":"2017-10-05T05:31:11.626Z"},"updatedDate":{"$date":"2017-10-05T05:31:11.626Z"},"__v":0}

@@ -1,0 +1,1 @@
+{"_id":{"$oid":"59e1bbeb60a8fb42656eb42b"},"questionType":"discriptive","questionText":"hello","marks":50,"category":"technical","createdDate":{"$date":"2017-10-14T07:25:31.727Z"},"updatedDate":{"$date":"2017-10-14T07:25:31.727Z"},"answers":[],"__v":0}

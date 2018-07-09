@@ -1,0 +1,2 @@
+{"_id":{"$oid":"59e4801a8e348577e5e41149"},"assessmentId":"HJGQg-fTb","timePeriod":"50","passingMarks":"40","totalMarks":"60","category":"technical","assessmentName":"NodeJS","__v":0}
+{"_id":{"$oid":"59e480988e348577e5e4114a"},"assessmentId":"SJWsx-MTZ","timePeriod":"60","passingMarks":"25","totalMarks":"60","category":"technical","assessmentName":"ReactJS","__v":0}
